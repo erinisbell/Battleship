@@ -25,6 +25,7 @@ end
 def placed?
   @x || @y
 end
+
 def overlaps_with? ship
   positions.find { |hole| ship.covers? hole.x, hole.y } 
 end
@@ -41,7 +42,7 @@ end
 
 def sunk?
  return false unless placed?
- positions.length == @length
+ @hits.length == @length
 end
 
 private
