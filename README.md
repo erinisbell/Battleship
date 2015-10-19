@@ -1,0 +1,1 @@
+Player should be able place ships on a grid in order to play against a computer and guess where the computer's ships have been placed by entering in coordinates (e.g. 'B10'). 
