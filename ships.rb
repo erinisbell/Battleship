@@ -1,14 +1,15 @@
 require 'matrix'
 require_relative 'hole'
+require 'pry'
 
 class Ship
 
   attr_reader :length, :ship, :place
 
   def initialize length
-    @length = length 
-    @hits = [] 
-  end 
+    @length = length
+    @hits = []
+  end
 
   def place x, y, horizontal
    return false if placed?
@@ -27,7 +28,7 @@ def placed?
 end
 
 def overlaps_with? ship
-  positions.find { |hole| ship.covers? hole.x, hole.y } 
+  positions.find { |hole| ship.covers? hole.x, hole.y }
 end
 
 def fire_at x, y
@@ -42,7 +43,7 @@ end
 
 def sunk?
  return false unless placed?
- @hits.length == @length
+ @positions.length == @length
 end
 
 private
@@ -59,4 +60,4 @@ def positions
   @positions
 end
 
-end 
+end
